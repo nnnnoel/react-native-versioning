@@ -1,12 +1,13 @@
 {
   "name": "react-native-versioning",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "react native versioning CLI",
   "main": "bin/index.js",
   "private": false,
   "scripts": {
     "start": "bin/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "bin": {
     "react-native-versioning": "bin/index.js"
@@ -18,7 +19,12 @@
     "Version"
   ],
   "author": "Noel Kim",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
   "devDependencies": {
     "@types/node": "^14.14.22",
     "@types/yargs": "^15.0.12",
@@ -29,10 +35,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chequerNoel/react-native-versioning.git"
+    "url": "https://github.com/chequerNoel/react-native-versioning.git"
   },
   "bugs": {
-    "url": "https://github.com/chequerNoel/react-native-versioning/issues"
+    "url": "https://github.com/chequerNoel/react-native-versioning/issues",
+    "email": "react-native@kakao.com"
   },
   "homepage": "https://github.com/chequerNoel/react-native-versioning#readme"
 }

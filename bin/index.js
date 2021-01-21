@@ -46,6 +46,13 @@ function updateIOS(targetVersion, targetBuildNumber) {
                 if (typeof targetVersion !== 'undefined') {
                     if (replaced.indexOf('MARKETING_VERSION') === -1) {
                         replaced = replaced.replace(/(LD_RUNPATH_SEARCH_PATHS = [^;]+;([\n\s]+))/g, '$1MARKETING_VERSION = 1.0.0;$2');
+                        var projectName = xcodeprojName.replace('.xcodeproj', '');
+                        var plistPath = "ios/" + projectName + "/Info.plist";
+                        if (fs.existsSync(plistPath)) {
+                            var plist = fs.readFileSync(plistPath, 'utf8');
+                            plist = plist.replace(/(<key>CFBundleShortVersionString<\/key>[\n\s]+<string>)[^<]+(<\/string>)/, '$1$(MARKETING_VERSION)$2');
+                            fs.writeFileSync(plistPath, plist);
+                        }
                     }
                     replaced = replaced.replace(/MARKETING_VERSION = [^;]+;/g, "MARKETING_VERSION = " + targetVersion + ";");
                 }

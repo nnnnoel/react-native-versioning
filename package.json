@@ -8,7 +8,7 @@
     "build": "tsc"
   },
   "bin": {
-    "react-native-versioning": "bin/react-native-versioning"
+    "react-native-versioning": "bin/index.js"
   },
   "keywords": [
     "React",

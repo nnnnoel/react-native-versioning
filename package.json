@@ -1,14 +1,23 @@
 {
   "name": "react-native-versioning",
   "version": "1.0.0",
-  "description": "",
+  "description": "react native versioning CLI",
   "main": "bin/index.js",
   "scripts": {
-    "start": "node bin/index.js"
+    "start": "bin/index.js",
+    "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "bin": {
+    "react-native-versioning": "bin/react-native-versioning"
+  },
+  "keywords": [
+    "React",
+    "React-Native",
+    "CLI",
+    "Version"
+  ],
+  "author": "Noel Kim",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.14.22",
     "@types/yargs": "^15.0.12",
@@ -16,5 +25,13 @@
   },
   "dependencies": {
     "yargs": "^16.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chequerNoel/react-native-versioning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chequerNoel/react-native-versioning/issues"
+  },
+  "homepage": "https://github.com/chequerNoel/react-native-versioning#readme"
 }

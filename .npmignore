@@ -1,0 +1,4 @@
+.idea/
+.prettierrc
+index.ts
+tsconfig.json

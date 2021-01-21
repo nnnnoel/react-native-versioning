@@ -1,6 +1,6 @@
 {
   "name": "react-native-versioning",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react native versioning CLI",
   "main": "bin/index.js",
   "private": false,

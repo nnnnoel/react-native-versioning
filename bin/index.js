@@ -45,7 +45,7 @@ function updateIOS(targetVersion, targetBuildNumber) {
             if (replaced) {
                 if (typeof targetVersion !== 'undefined') {
                     if (replaced.indexOf('MARKETING_VERSION') === -1) {
-                        replaced = replaced.replace(/(LD_RUNPATH_SEARCH_PATHS = [^;]+;[\n\s]+)/g, '$1MARKETING_VERSION = 1.0.0;');
+                        replaced = replaced.replace(/(LD_RUNPATH_SEARCH_PATHS = [^;]+;([\n\s]+))/g, '$1MARKETING_VERSION = 1.0.0;$2');
                     }
                     replaced = replaced.replace(/MARKETING_VERSION = [^;]+;/g, "MARKETING_VERSION = " + targetVersion + ";");
                 }
@@ -67,12 +67,13 @@ function updateAndroid(targetVersion, targetBuildNumber) {
         var replaced = fs.readFileSync(buildGradlePath, 'utf8');
         if (replaced) {
             if (typeof targetVersion !== 'undefined') {
-                replaced = replaced.replace(/versionName\s+"[^"]"/g, "versionName \"" + targetVersion + "\"");
+                replaced = replaced.replace(/versionName\s+\S+/g, "versionName \"" + targetVersion + "\"");
             }
             if (typeof targetBuildNumber !== 'undefined') {
                 replaced = replaced.replace(/versionCode\s+\d+/g, "versionCode " + targetBuildNumber);
             }
         }
+        fs.writeFileSync(buildGradlePath, replaced);
     }
 }
 if (options.iosOnly !== false) {
@@ -81,3 +82,4 @@ if (options.iosOnly !== false) {
 if (options.androidOnly !== false) {
     updateAndroid(options.target, options.build);
 }
+console.log('Update Successful!');

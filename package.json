@@ -35,11 +35,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chequerNoel/react-native-versioning.git"
+    "url": "https://github.com/nnnnoel/react-native-versioning.git"
   },
   "bugs": {
-    "url": "https://github.com/chequerNoel/react-native-versioning/issues",
+    "url": "https://github.com/nnnnoel/react-native-versioning/issues",
     "email": "react-native@kakao.com"
   },
-  "homepage": "https://github.com/chequerNoel/react-native-versioning#readme"
+  "homepage": "https://github.com/nnnnoel/react-native-versioning#readme"
 }
